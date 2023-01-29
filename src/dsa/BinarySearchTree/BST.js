@@ -90,11 +90,22 @@ class BST {
         return data > current.data ? BST.right : BST.left;
     }
     preorderTraversalRecur(node = this.root) {
-        //TODO: this, inorder, postorder
         if(node === null) return
         console.log(node.data)
-        this.preoderTraversalRecur(node.left)
+        this.preorderTraversalRecur(node.left)
         this.preorderTraversalRecur(node.right)
+    }
+    inorderTraversalRecur(node = this.root) {
+        if(node === null) return
+        this.inorderTraversalRecur(node.left)
+        console.log(node.data)
+        this.inorderTraversalRecur(node.right)
+    }
+    postorderTraversalRecur(node = this.root){
+        if(node === null) return
+        this.postorderTraversalRecur(node.left)
+        this.postorderTraversalRecur(node.right)
+        console.log(node.data)
     }
 }
 export default BST;

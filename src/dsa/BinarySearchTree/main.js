@@ -1,7 +1,9 @@
-import { basic, preorderTraversal } from "./demos";
+import { basic, inorderTraversal, postorderTraversal, preorderTraversal } from "./demos";
 
 function main() {
     // basic()
-    preorderTraversal()
+    // preorderTraversal()
+    // postorderTraversal()
+    inorderTraversal()
 }
 main()

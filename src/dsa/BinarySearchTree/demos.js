@@ -21,8 +21,11 @@ export const basic = () => {
 }
 
 export const preorderTraversal = () => {
-    let bst = {} 
-    Object.assign(bst, vanilla)
-    console.log('bst obj', bst)
-    bst.preorderTraversalRecur()
+    vanilla.preorderTraversalRecur()
+}
+export const postorderTraversal = () => {
+    vanilla.postorderTraversalRecur()
+}
+export const inorderTraversal = () => {
+    vanilla.inorderTraversalRecur()
 }
