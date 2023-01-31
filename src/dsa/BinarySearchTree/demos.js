@@ -29,3 +29,6 @@ export const postorderTraversal = () => {
 export const inorderTraversal = () => {
     vanilla.inorderTraversalRecur()
 }
+export const breadthFirstSearch = ()=>{
+    vanilla.breadthFirstSearch()
+}

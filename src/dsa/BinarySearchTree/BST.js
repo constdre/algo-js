@@ -90,22 +90,33 @@ class BST {
         return data > current.data ? BST.right : BST.left;
     }
     preorderTraversalRecur(node = this.root) {
-        if(node === null) return
+        if (node === null) return
         console.log(node.data)
         this.preorderTraversalRecur(node.left)
         this.preorderTraversalRecur(node.right)
     }
     inorderTraversalRecur(node = this.root) {
-        if(node === null) return
+        if (node === null) return
         this.inorderTraversalRecur(node.left)
         console.log(node.data)
         this.inorderTraversalRecur(node.right)
     }
-    postorderTraversalRecur(node = this.root){
-        if(node === null) return
+    postorderTraversalRecur(node = this.root) {
+        if (node === null) return
         this.postorderTraversalRecur(node.left)
         this.postorderTraversalRecur(node.right)
         console.log(node.data)
+    }
+    breadthFirstSearch() {
+        const workingQueue = [this.root]
+        while (workingQueue.length > 0) {
+            const node = workingQueue.shift()
+            // process node
+            console.log(node.data)
+            // add node's children to queue if there are any 
+            node.left !== null && workingQueue.push(node.left)
+            node.right !== null && workingQueue.push(node.right)
+        }
     }
 }
 export default BST;
