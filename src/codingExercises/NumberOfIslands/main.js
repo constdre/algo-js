@@ -28,6 +28,11 @@ main()
 /**
  * @param {character[][]} grid
  * @return {number}
+ * 
+ * ALGORITHM 
+ * PreorderDFS creates the linkages, trigger it on each node to "create the island", and 
+ * changing the values to 0 so they do not get processed again. The # of times dfs was triggered
+ * is the number of islands in the matrix.
  */
 function numIslands(grid) {
     let countIslands = 0
@@ -45,11 +50,12 @@ function numIslands(grid) {
 
 function preorderDFS(grid, rowIndex, colIndex) {
     const node = grid[rowIndex][colIndex]
+    if (node === '0') return
+    // matrix boundaries check
     const canGoDown = grid[rowIndex + 1]
     const canGoLeft = grid[rowIndex][colIndex - 1]
     const canGoRight = grid[rowIndex][colIndex + 1]
     const canGoUp = grid[rowIndex - 1]
-    if (node === '0') return
     // Transform current to 0 to mark it as visited
     grid[rowIndex][colIndex] = '0'
     canGoDown && preorderDFS(grid, rowIndex + 1, colIndex)
